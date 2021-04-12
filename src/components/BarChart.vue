@@ -1,36 +1,44 @@
 <template>
-  <h1>{{ msg }}</h1>
+  <div>
+    <h1>{{ msg }}</h1>
 
-  <!-- X og Y -->
-  <!-- show bar for each data point -->
-  <!-- X = Date -->
-  <!-- Y = Water level  -->
-  <!-- Water tank height = 700cm -->
-  <!-- Given data = CM's from top, Date measured -->
+    <!-- X og Y -->
+    <!-- show bar for each data point -->
+    <!-- X = Date -->
+    <!-- Y = Water level  -->
+    <!-- Water tank height = 700cm -->
+    <!-- Given data = CM's from top, Date measured -->
 
-  <div class="bar-chart">
-     <div class="bar-chart__y">
-      <div v-for="(date, index) in state.waterLevels" :key="index" class="bar-chart__y__element">
-        {{ date }}
+    <div class="bar-chart">
+      <div class="bar-chart__y">
+        <div
+          v-for="(date, index) in state.waterLevels"
+          :key="index"
+          class="bar-chart__y__element"
+        >{{ date }}</div>
       </div>
-    </div>
-    <div class="bar-chart__x">
-      <div v-for="(date, index) in state.dates" :key="index" class="bar-chart__x__element">
-        {{ index }}
+      <div class="bar-chart__x">
+        <div
+          v-for="(date, index) in state.dates"
+          :key="index"
+          class="bar-chart__x__element"
+        >{{ index }}</div>
       </div>
     </div>
   </div>
-
 </template>
 
 <script setup>
-import { defineProps, reactive } from 'vue'
+import { defineProps, reactive } from "vue";
 
 defineProps({
   msg: String
-})
+});
 
-const state = reactive({ waterLevels: [100, 200, 300, 200, 100], dates: [1, 2, 3, 4, 5] })
+const state = reactive({
+  waterLevels: [100, 200, 300, 200, 100],
+  dates: [1, 2, 3, 4, 5]
+});
 </script>
 
 <style scoped>
@@ -40,12 +48,11 @@ a {
 
 .bar-chart {
   display: flex;
-  flex-direction: row;  
+  flex-direction: row;
 
   width: 500px;
   height: 500px;
   background-color: grey;
-  
 }
 
 .bar-chart__x {
@@ -54,7 +61,6 @@ a {
   justify-content: space-around;
   align-self: flex-end;
   flex: 1;
-
 
   background-color: grey;
 }
@@ -68,8 +74,6 @@ a {
   flex-direction: column-reverse;
   align-self: flex-end;
 
-
   background-color: grey;
 }
-
 </style>
