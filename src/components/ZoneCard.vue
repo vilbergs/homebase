@@ -20,20 +20,20 @@
 </template>
 
 <script setup>
-import { defineProps, reactive } from "vue";
+import { defineProps, reactive } from 'vue'
 
 defineProps({
-  title: String
-});
+  title: String,
+})
 
 const state = reactive({
-  Temperature: 40,
-  Humidity: 32,
+  temperature: 40,
+  humidity: 32,
   maxTemp: 41,
   minTemp: 12,
   maxHumid: 43,
-  minHumid: 28
-});
+  minHumid: 28,
+})
 </script>
 
 <style>
@@ -75,14 +75,14 @@ const state = reactive({
 h2 {
   margin: 0;
   padding: 0;
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 500;
   padding: 12px;
   padding-left: 1em;
 }
 
 h1 {
-  font-family: "lato", sans-serif;
+  font-family: 'lato', sans-serif;
   font-size: 3em;
   margin: 0;
   padding: 0;
@@ -98,7 +98,7 @@ h1 {
 }
 
 h4 {
-  font-family: "lato", sans-serif;
+  font-family: 'lato', sans-serif;
   margin: 0;
   padding: 0;
   font-size: 1em;
@@ -109,6 +109,6 @@ h6 {
   margin: 0;
   padding: 0;
   padding-bottom: 3px;
-  font-family: "lato", sans-serif;
+  font-family: 'lato', sans-serif;
 }
 </style>

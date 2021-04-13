@@ -1,15 +1,4 @@
 <template>
-<<<<<<< HEAD
-  <div>
-    <ZoneCard></ZoneCard>
-  </div>
-</template>
-
-<script setup>
-import BarChart from "./components/BarChart.vue";
-import ZoneCard from "./components/ZoneCard.vue";
-</script>
-=======
   <nav>
     <h1>Navigation</h1>
     <p>
@@ -43,7 +32,6 @@ import ZoneCard from "./components/ZoneCard.vue";
 </template>
 
 <script setup></script>
->>>>>>> dcc44f6193268151e73d77ea5f8967cda41f88a1
 
 <style>
 ul {
@@ -55,11 +43,7 @@ ul {
   padding: 10px;
 }
 #app {
-<<<<<<< HEAD
-  font-family: "Lato", Avenir, Helvetica, Arial, sans-serif;
-=======
   font-family: 'Lato', sans-serif;
->>>>>>> dcc44f6193268151e73d77ea5f8967cda41f88a1
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
