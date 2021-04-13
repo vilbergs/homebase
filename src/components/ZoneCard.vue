@@ -27,8 +27,8 @@ defineProps({
 })
 
 const state = reactive({
-  Temperature: 40,
-  Humidity: 32,
+  temperature: 40,
+  humidity: 32,
   maxTemp: 41,
   minTemp: 12,
   maxHumid: 43,
