@@ -7,13 +7,6 @@
 <script setup>
 import BarChart from "./components/BarChart.vue";
 import ZoneCard from "./components/ZoneCard.vue";
-
-// export default {
-//   name: "App",
-//   components: {
-//     ZoneCard
-//   }
-// };
 </script>
 
 <style>
