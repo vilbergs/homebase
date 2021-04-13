@@ -9,6 +9,7 @@
 
 <script setup>
 import { defineProps, reactive } from 'vue'
+import ZoneCard from '../components/ZoneCard.vue'
 
 defineProps({
   msg: String,
