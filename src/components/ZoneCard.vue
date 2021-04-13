@@ -26,6 +26,8 @@ defineProps({
   title: String
 });
 
+let title = "Sovrum";
+
 const state = reactive({
   Temperature: 40,
   Humidity: 32,

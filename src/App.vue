@@ -1,7 +1,7 @@
 <template>
 <<<<<<< HEAD
   <div>
-    <ZoneCard></ZoneCard>
+    <ZoneCard title="Sovrum" />
   </div>
 </template>
 
