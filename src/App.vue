@@ -1,12 +1,19 @@
 <template>
-  <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
-  <BarChart />
-  <Card />
+  <div>
+    <ZoneCard></ZoneCard>
+  </div>
 </template>
 
 <script setup>
 import BarChart from "./components/BarChart.vue";
-import Card from "./components/Card.vue";
+import ZoneCard from "./components/ZoneCard.vue";
+
+// export default {
+//   name: "App",
+//   components: {
+//     ZoneCard
+//   }
+// };
 </script>
 
 <style>

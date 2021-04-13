@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="zone">
     <div class="container">
       <div class="temp">
         <h6>Temperature</h6>
@@ -15,6 +15,7 @@
       </div>
     </div>
     <h2>{{ title }}</h2>
+    <slot />
   </div>
 </template>
 
@@ -37,7 +38,7 @@ const state = reactive({
 
 <style>
 /* Affectrs the main card component */
-.card {
+.zone {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   transition: 0.3s;
   border-radius: 12px;
@@ -48,7 +49,7 @@ const state = reactive({
 }
 
 /* Deeper shadow on mouse-over */
-.card:hover {
+.zone:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
 }
 
