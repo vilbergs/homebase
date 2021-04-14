@@ -3,13 +3,13 @@
     <div class="container">
       <div class="temp">
         <h6>Temperature</h6>
-        <h1 id="currentTemp">{{ state.Temperature }}Cº</h1>
+        <h1 id="currentTemp">{{ state.temperature }}Cº</h1>
         <h4>Min: {{ state.minTemp }}Cº</h4>
         <h4>Max: {{ state.maxTemp }}Cº</h4>
       </div>
       <div class="humid">
         <h6>Humidity</h6>
-        <h1 id="currentHumid">{{ state.Humidity }}%</h1>
+        <h1 id="currentHumid">{{ state.humidity }}%</h1>
         <h4>Min: {{ state.minHumid }}%</h4>
         <h4>Max: {{ state.maxHumid }}%</h4>
       </div>
@@ -43,7 +43,7 @@ const state = reactive({
   transition: 0.3s;
   border-radius: 12px;
   background-color: white;
-  margin: 1em;
+  margin: 3em 6em 3em 6em;
   border: solid 1px #eaeaea;
   height: 100%;
 }
@@ -56,7 +56,7 @@ const state = reactive({
 /* Contains number elements */
 .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   border-radius: 12px 12px 0px 0px;
   background-color: #fafafa;
   padding-top: 5%;
