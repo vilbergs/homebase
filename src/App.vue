@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import { onMounted, reactive, toRefs, inject } from 'vue'
+import { reactive, toRefs, inject } from 'vue'
 
 export default {
   setup() {
@@ -51,16 +51,11 @@ export default {
       auth,
     })
 
-    onMounted((asd) => {
-      console.log(asd)
-    })
-
     const login = () => {
       if (!state.auth) {
         return
       }
 
-      console.log('hej')
       state.auth.loginWithRedirect()
     }
 
@@ -68,8 +63,6 @@ export default {
       if (!state.auth) {
         return
       }
-
-      console.log('hej')
 
       state.auth.logout()
     }
