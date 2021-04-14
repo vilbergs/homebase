@@ -19,21 +19,29 @@
   </div>
 </template>
 
-<script setup>
-import { defineProps, reactive } from 'vue'
+<script>
+import { reactive } from 'vue'
 
-defineProps({
-  title: String,
-})
+export default {
+  props: {
+    title: {
+      type: String,
+      default: '',
+    },
+  },
+  setup() {
+    const state = reactive({
+      temperature: 40,
+      humidity: 32,
+      maxTemp: 41,
+      minTemp: 12,
+      maxHumid: 43,
+      minHumid: 28,
+    })
 
-const state = reactive({
-  temperature: 40,
-  humidity: 32,
-  maxTemp: 41,
-  minTemp: 12,
-  maxHumid: 43,
-  minHumid: 28,
-})
+    return { state }
+  },
+}
 </script>
 
 <style>
