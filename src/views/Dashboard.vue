@@ -8,14 +8,7 @@
 </template>
 
 <script setup>
-import { defineProps, reactive } from 'vue'
 import ZoneCard from '../components/ZoneCard.vue'
-
-defineProps({
-  msg: String,
-})
-
-const state = reactive({})
 </script>
 
 <style scoped></style>

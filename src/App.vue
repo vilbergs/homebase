@@ -1,37 +1,87 @@
 <template>
-  <nav>
-    <h1>Navigation</h1>
-    <p>
-      The navigation is in our root component (App), so it will be rendered on
-      every route!
-    </p>
-    <ul>
-      <!-- use the router-link component for navigation. -->
-      <!-- specify the link by passing the `to` prop. -->
-      <!-- `<router-link>` will render an `<a>` tag with the correct `href` attribute -->
-      <li>
-        <router-link to="/">Dashboard</router-link>
-      </li>
-      <li>
-        <router-link to="/login">Login</router-link>
-      </li>
-    </ul>
-  </nav>
+  <div>
+    <nav>
+      <h1>Navigation</h1>
+      <p>
+        The navigation is in our root component (App), so it will be rendered on
+        every route!
+      </p>
+      <ul>
+        <!-- use the router-link component for navigation. -->
+        <!-- specify the link by passing the `to` prop. -->
+        <!-- `<router-link>` will render an `<a>` tag with the correct `href` attribute -->
+        <li>
+          <router-link to="/">Dashboard</router-link>
+        </li>
+        <li>
+          <router-link to="/profile">Profile</router-link>
+        </li>
+      </ul>
 
-  <section class="view">
-    <p>
-      Our views are rendered with <code>router-view</code> depending on what
-      route we are on...
-    </p>
-    <p>
-      So "/" will take us to the Dashboard component and "/login" will take us
-      to the Login component!
-    </p>
-    <router-view></router-view>
-  </section>
+      <div v-if="!auth.loading">
+        <!-- show login when not authenticated -->
+        <button v-if="!auth.isAuthenticated" @click="login">Log in</button>
+        <!-- show logout when authenticated -->
+        <button v-if="auth.isAuthenticated" @click="logout">Log out</button>
+      </div>
+    </nav>
+
+    <section class="view">
+      <p>
+        Our views are rendered with <code>router-view</code> depending on what
+        route we are on...
+      </p>
+      <p>
+        So "/" will take us to the Dashboard component and "/profile" will take
+        us to the Profile component!
+      </p>
+      <router-view></router-view>
+    </section>
+  </div>
 </template>
 
-<script setup></script>
+<script>
+import { onMounted, reactive, toRefs, inject } from 'vue'
+
+export default {
+  setup() {
+    const auth = inject('Auth')
+
+    const state = reactive({
+      auth,
+    })
+
+    onMounted((asd) => {
+      console.log(asd)
+    })
+
+    const login = () => {
+      if (!state.auth) {
+        return
+      }
+
+      console.log('hej')
+      state.auth.loginWithRedirect()
+    }
+
+    const logout = () => {
+      if (!state.auth) {
+        return
+      }
+
+      console.log('hej')
+
+      state.auth.logout()
+    }
+
+    return {
+      ...toRefs(state),
+      login,
+      logout,
+    }
+  },
+}
+</script>
 
 <style>
 ul {
